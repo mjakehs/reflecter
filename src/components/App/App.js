@@ -3,6 +3,7 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import './App.css';
 import FeedBackFormPage from '../FeedBackFormPage/FeedBackFormPage';
 import SubmitCompletePage from '../SubmitCompletePage/SubmitCompletePage';
+import { connect } from 'react-redux';
 
 class App extends Component {
   render() {
@@ -21,10 +22,13 @@ class App extends Component {
         </ul>
         <Route  path="/feedback" component={FeedBackFormPage} />
         <Route  path="/complete" component={SubmitCompletePage} />
+        <pre>{JSON.stringify(this.props.reduxState, null, 2)}</pre>
       </div>
     </Router>
     );
   }
 }
 
-export default App;
+const mapStateToProps = reduxState => ({reduxState});
+
+export default connect(mapStateToProps)(App);
