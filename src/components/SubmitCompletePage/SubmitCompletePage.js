@@ -1,5 +1,5 @@
 //page view displayed on form completeion -- pushes user back to form start.
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
 class SubmitCompletePage extends Component {
 

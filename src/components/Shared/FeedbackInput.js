@@ -1,6 +1,6 @@
 //input form to accept feedback
 //takes question as props
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
 class FeedbackInput extends Component {
 

@@ -1,5 +1,5 @@
 //shows progress through form, takes stepNumber as props
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
 class ProgressBar extends Component {
 

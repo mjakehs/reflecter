@@ -1,6 +1,6 @@
 //button that adds form value to state
 //takes path of next view and redux action as props
-import React, {component} from 'react';
+import React, {Component} from 'react';
 
 class NextButton extends Component {
 

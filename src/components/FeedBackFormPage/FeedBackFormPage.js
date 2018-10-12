@@ -1,5 +1,5 @@
 //main view of app, routes between different form components 
-import React, {component} from 'react';
+import React, { Component } from 'react';
 
 class FeedBackFormPage extends Component {
 
