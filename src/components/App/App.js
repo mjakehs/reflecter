@@ -16,10 +16,10 @@ class App extends Component {
         <br/>
         {/* Navbar for dev mode only --> will convert to inner app buttons for this routers actions */}
         <ul>
-          <li><Link to="/">Feedback Form Page</Link></li>
+          <li><Link to="/feedback">Feedback Form Page</Link></li>
           <li><Link to="/complete">Submit Complete Page</Link></li>
         </ul>
-        <Route exact path="/" component={FeedBackFormPage} />
+        <Route  path="/feedback" component={FeedBackFormPage} />
         <Route  path="/complete" component={SubmitCompletePage} />
       </div>
     </Router>
