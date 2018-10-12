@@ -5,6 +5,7 @@ import FormViewOne from '../FormViews/FormViewOne';
 import FormViewTwo from '../FormViews/FormViewTwo';
 import FormViewThree from '../FormViews/FormViewThree';
 import FormViewFour from '../FormViews/FormViewFour';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 
 class FeedBackFormPage extends Component {
@@ -14,6 +15,7 @@ class FeedBackFormPage extends Component {
             <Router>
                 <div>
                     <h1>FeedBackFormPage</h1>
+                    <ProgressBar />
                     <ol>
                         <li><Link to="/feedback/1">Form View One</Link></li>
                         <li><Link to="/feedback/2">Form View Two</Link></li>

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import FeedBackInput from '../Shared/FeedbackInput';
+import NextButton from '../Shared/NextButton';
 
 class FormViewThree extends Component {
 
@@ -6,6 +8,8 @@ class FormViewThree extends Component {
         return(
             <div>
                 <h1>FormViewThree</h1>
+                <FeedBackInput />
+                <NextButton />
             </div>
         );
     }
