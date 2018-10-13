@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('build'));
 
 /** ---------- EXPRESS ROUTES ---------- **/
-
+app.use('/api/feedback', require('./routers/feedback.router'));
 
 /** ---------- START SERVER ---------- **/
 app.listen(port, function () {
