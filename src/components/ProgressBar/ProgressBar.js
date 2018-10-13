@@ -10,7 +10,7 @@ class ProgressBar extends Component {
                 <div className="progress-bar"></div>
             </div>
         );
-    }
+    }   
 }
 
 export default ProgressBar;
