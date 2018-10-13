@@ -66,3 +66,7 @@
 .next-button {  
   float: right;
 }
+
+.progress-bar-div {
+  margin-bottom: 10vh;
+}

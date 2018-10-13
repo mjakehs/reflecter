@@ -29,7 +29,7 @@ class ProgressBar extends Component {
 
     render(){
         return(
-            <div>
+            <div className="progress-bar-div">
                 <h4>{this.props.stage} of 4 pages</h4>
                 <div className="progress-bar">
                     <div className="progress-filler"></div>
