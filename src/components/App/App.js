@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import './App.css';
+
+//include sub-views
 import FeedBackFormPage from '../FeedBackFormPage/FeedBackFormPage';
 import SubmitCompletePage from '../SubmitCompletePage/SubmitCompletePage';
-import { connect } from 'react-redux';
+import Admin from '../Admin/Admin';
+
 
 class App extends Component {
   render() {
@@ -15,6 +19,7 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
+        <Route path="/admin" component={Admin} />
         {/* Navbar for dev mode only --> will convert to inner app buttons for this routers actions */}
         <ul>
           <li><Link to="/feedback">Feedback Form Page</Link></li>

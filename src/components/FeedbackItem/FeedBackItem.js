@@ -1,9 +1,6 @@
 //used as return for map function in Admin component
 import React, {Component} from 'react';
 import axios from 'axios';
-import { connect } from 'react-redux';
-
-const feedback = this.props.feedback;
 
 class Admin extends Component {
 
@@ -26,17 +23,15 @@ class Admin extends Component {
 
     render(){
         return(
-            <tr className="feedback-row">
-                <td>{feedback.feeling}</td>
-                <td>{feedback.comprehension}</td>
-                <td>{feedback.support}</td>
-                <td>{feedback.comments}</td>
-                <td><button onClick={() => this.deleteFeedback(feedback.id)}>Delete</button></td>
+            <tr className="feedback-row" key={this.props.feedback.id}>
+                <td>{this.props.feedback.feeling}</td>
+                <td>{this.props.feedback.understanding}</td>
+                <td>{this.props.feedback.support}</td>
+                <td>{this.props.feedback.comments}</td>
+                <td><button onClick={() => this.deleteFeedback(this.props.feedback.id)}>Delete</button></td>
             </tr>  
         );
     }
 }
 
-mapStateToProps = ({ admin }) => ({feedback: admin})
-
-export default connect(mapStateToProps)(Admin);
+export default Admin;

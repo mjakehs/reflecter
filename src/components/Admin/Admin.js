@@ -2,6 +2,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import ADMIN_ACTIONS from '../../redux/actions/ADMIN_ACTIONS';
+import FeedbackItem from '../FeedbackItem/FeedBackItem';
+import axios from 'axios';
 
 class Admin extends Component {
 
@@ -44,4 +46,6 @@ class Admin extends Component {
     }
 }
 
-export default connect()(Admin);
+const mapReduxStateToProps = ({ admin }) => ({feedbackHistory: admin})
+
+export default connect(mapReduxStateToProps)(Admin);
