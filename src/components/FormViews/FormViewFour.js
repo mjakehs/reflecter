@@ -10,8 +10,8 @@ class FormViewFour extends Component {
         return(
             <div>
                 <h1>FormViewFour</h1>
-                <FeedBackInput formNumber={'four'} prompt={prompt} />
-                <NextButton nextPath={'four'} />
+                {/* <FeedBackInput formNumber={'four'} prompt={prompt} />
+                <NextButton nextPath={'four'} /> */}
             </div>
         );
     }

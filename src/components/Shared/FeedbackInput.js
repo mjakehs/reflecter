@@ -9,6 +9,10 @@ let propsName = '';
 
 class FeedbackInput extends Component {
 
+    state = {
+        prompt: '',
+    }
+
     handleInputChange = event => {
         this.props.dispatch({type: SELECTED_ACTION, payload: event.target.value})
         console.log(propsName);
@@ -16,44 +20,45 @@ class FeedbackInput extends Component {
 
     selectActionByProps = props => {
         switch(props) {
-            case 'one':
+            case 1:
                 SELECTED_ACTION = FORM_ACTIONS.ADD_FEEBACK_ONE;
                 propsName = 'feeling';
+                this.setState({
+                    prompt: 'How are you feeling today?',
+                })  
                 break;
-            case 'two':
+            case 2:
                 SELECTED_ACTION = FORM_ACTIONS.ADD_FEEBACK_TWO;
                 propsName = 'comprehension';
+                this.setState({
+                    prompt: 'How well are you understanding the content?',
+                })  
                 break;
-            case 'three':
+            case 3:
                 SELECTED_ACTION = FORM_ACTIONS.ADD_FEEBACK_THREE;
                 propsName = 'support';
-                break;
-            case 'four':
-                SELECTED_ACTION = FORM_ACTIONS.ADD_FEEBACK_FOUR;
-                propsName = 'comments';
+                this.setState({
+                    prompt: 'How well are you being supported?',
+                })  
                 break;
         }
     }
     
     componentDidMount() {
-        this.selectActionByProps(this.props.formNumber);
+        this.selectActionByProps(this.props.stage);
     }
 
     render(){
         return(
             <div>
                 <h1>FeedbackInput</h1>
-                <p className="form-prompt">{this.props.prompt}</p>
+                <p className="form-prompt">{this.state.prompt}</p>
                 <input type="number" onChange={this.handleInputChange} />
             </div>
         );
     }
 }
 
-const mapStateToProps = reduxState => {
-    return({
-        feedbackValue: reduxState.feedbackForm[propsName],
-    });
-};
+const mapStateToProps = ({stage}) => ({stage});
 
 export default connect(mapStateToProps)(FeedbackInput);
