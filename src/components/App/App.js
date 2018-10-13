@@ -7,6 +7,7 @@ import './App.css';
 import FeedBackFormPage from '../FeedBackFormPage/FeedBackFormPage';
 import SubmitCompletePage from '../SubmitCompletePage/SubmitCompletePage';
 import Admin from '../Admin/Admin';
+import Header from '../Header/Header';
 
 
 class App extends Component {
@@ -14,9 +15,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <h1 className="App-title">Feedback!</h1>
-          </header>
+          <Header />
           <Route path="/admin" component={Admin} />
           <Route exact path="/" render={() => <Redirect to="/feedback"/>} />
           <Route path="/feedback" component={FeedBackFormPage} />
