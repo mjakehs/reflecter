@@ -36,7 +36,6 @@ class FormViewFour extends Component {
     render(){
         return(
             <div>
-                <h1>FormViewFour</h1>
                 <p>Any comments you want to leave?</p>
                 <input type="text" onChange={this.handleCommentChange} />
                 <button onClick={this.submitFeedback}>Submit</button>

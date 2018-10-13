@@ -7,7 +7,6 @@ class FormViewTwo extends Component {
     render(){
         return(
             <div>
-                <h1>FormViewTwo</h1>
                 <FeedBackInput />
                 <NextButton />
             </div>
