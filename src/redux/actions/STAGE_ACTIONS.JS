@@ -1,0 +1,6 @@
+const STAGE_ACTIONS = {
+    NEXT_STAGE: 'NEXT_STAGE',
+    RESTART_STAGE: 'RESTART_STAGE',
+}
+
+export default STAGE_ACTIONS;

@@ -7,6 +7,7 @@ class ProgressBar extends Component {
         return(
             <div>
                 <h1>ProgressBar</h1>
+                <div className="progress-bar"></div>
             </div>
         );
     }
