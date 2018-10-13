@@ -11,6 +11,7 @@ class FeedbackInput extends Component {
 
     handleInputChange = event => {
         this.props.dispatch({type: SELECTED_ACTION, payload: event.target.value})
+        console.log(propsName);
     }
 
     selectActionByProps = props => {
@@ -33,7 +34,7 @@ class FeedbackInput extends Component {
                 break;
         }
     }
-
+    
     componentDidMount() {
         this.selectActionByProps(this.props.formNumber);
     }

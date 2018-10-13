@@ -1,12 +1,35 @@
 //button that adds form value to state
 //takes path of next view and redux action as props
 import React, {Component} from 'react';
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+
+let nextPath = '';
 
 class NextButton extends Component {
 
     handleNextAction = () => {
-        console.log(this.props.form);
+        this.props.history.push(nextPath)
+    }
+    
+    setPath = props => {
+        switch(props) {
+            case 'one':
+                nextPath = '/feedback/2';
+                break;
+            case 'two':
+                nextPath = '/feedback/3';
+                break;
+            case 'three':
+                nextPath = '/feedback/4';
+                break;
+            case 'four':
+                nextPath = '/complete';
+                break;
+        }
+    }
+
+    componentDidMount(){
+        this.setPath(this.props.nextPath);
     }
 
     render(){
@@ -19,6 +42,4 @@ class NextButton extends Component {
     }
 }
 
-const mapStateToProps = ({form}) => ({form});
-
-export default connect(mapStateToProps)(NextButton);
+export default withRouter(NextButton);

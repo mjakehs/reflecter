@@ -11,7 +11,7 @@ class FormViewTwo extends Component {
             <div>
                 <h1>FormViewTwo</h1>
                 <FeedBackInput formNumber={'two'} prompt={prompt}/>
-                <NextButton />
+                <NextButton nextPath={'two'} />
             </div>
         );
     }

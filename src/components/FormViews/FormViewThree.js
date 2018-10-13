@@ -11,7 +11,7 @@ class FormViewThree extends Component {
             <div>
                 <h1>FormViewThree</h1>
                 <FeedBackInput formNumber={'three'} prompt={prompt} />
-                <NextButton />
+                <NextButton nextPath={'three'} />
             </div>
         );
     }

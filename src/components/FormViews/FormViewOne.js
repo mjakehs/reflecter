@@ -11,7 +11,7 @@ class FormViewOne extends Component {
             <div>
                 <h1>FormViewOne</h1>
                 <FeedBackInput formNumber={'one'} prompt={prompt} />
-                <NextButton />
+                <NextButton nextPath={'one'} />
             </div>
         );
     }
