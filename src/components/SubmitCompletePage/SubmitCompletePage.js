@@ -11,7 +11,6 @@ class SubmitCompletePage extends Component {
     render(){
         return(
             <div>
-                <h1>SubmitCompletePage</h1>
                 <button onClick={this.restartFeedbackProcess}>Return to Give Feedback Form</button>
             </div>
         );

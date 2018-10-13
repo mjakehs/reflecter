@@ -51,7 +51,6 @@ class FeedbackInput extends Component {
     render(){
         return(
             <div>
-                <h1>FeedbackInput</h1>
                 <p className="form-prompt">{this.state.prompt}</p>
                 <input type="number" onChange={this.handleInputChange} />
             </div>
