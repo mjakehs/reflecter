@@ -38,7 +38,6 @@ class NextButton extends Component {
     render(){
         return(
             <div>
-                <h1>NextButton</h1>
                 <button onClick={this.handleNextAction}>Next</button>
             </div>
         );
