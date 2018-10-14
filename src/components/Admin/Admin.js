@@ -27,9 +27,6 @@ const CustomTableCell = withStyles(theme => ({
       marginTop: theme.spacing.unit * 3,
       overflowX: 'auto',
     },
-    table: {
-      minWidth: 700,
-    },
     row: {
       '&:nth-of-type(odd)': {
         backgroundColor: theme.palette.background.default,
@@ -57,7 +54,7 @@ class Admin extends Component {
     render(){
         return(
             <div className="admin">
-                <Table className={this.props.classes.table}>
+                <Table id="admin-table">
                     <TableHead>
                         <TableRow>
                             <CustomTableCell>Flagged</CustomTableCell>

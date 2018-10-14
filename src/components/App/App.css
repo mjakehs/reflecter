@@ -75,3 +75,13 @@
 .progress-bar-div {
   margin-bottom: 10vh;
 }
+
+#admin-table {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+} 
