@@ -4,13 +4,18 @@
 
 .App-header {
   background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
   color: white;
+  width: 80vw;
+  height: 15vh;
+  vertical-align:  center;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .App-intro {
@@ -59,7 +64,7 @@
   display: flex;
   height: 10vh;
   width: 20vw;  
-  background-color: lightgoldenrodyellow;
+  background-color: white;
   margin-bottom: 6vh;
 }
 
@@ -70,8 +75,3 @@
 .progress-bar-div {
   margin-bottom: 10vh;
 }
-
-.form-menu-item {
-  background-color: lightgoldenrodyellow;
-}
-

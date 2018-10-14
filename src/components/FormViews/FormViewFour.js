@@ -1,17 +1,36 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
+import ArrowForward from '@material-ui/icons/ArrowForward';
+import TextField from '@material-ui/core/TextField';
+import { withStyles } from '@material-ui/core/styles';
 //action includes
 import FORM_ACTIONS from '../../redux/actions/FORM_ACTIONS';
 import STAGE_ACTIONS from '../../redux/actions/STAGE_ACTIONS';
 
+const styles = theme => ({
+    textField: {
+        marginLeft: theme.spacing.unit,
+        marginRight: theme.spacing.unit,
+        width: 200,
+      },
+})
 
 class FormViewFour extends Component {
 
+    state = {
+        comment: '',
+    }
+
     handleCommentChange = event => {
-        this.props.dispatch({type: FORM_ACTIONS.ADD_FEEBACK_FOUR, payload: event.target.value});
+        this.props.dispatch({ type: FORM_ACTIONS.ADD_FEEBACK_FOUR, payload: event.target.value });
+        this.setState({
+            comment: event.target.value,
+        })
     }
 
     submitFeedback = () => {
@@ -20,30 +39,44 @@ class FormViewFour extends Component {
             url: '/api/feedback',
             data: this.props.feedbackForm
         })
-        .then(() => {
-            //obviosuly this code is clunky -- hopefully learning redux sagas will help :)
-            this.props.dispatch({type: STAGE_ACTIONS.RESTART_STAGE});
-            this.props.dispatch({type: FORM_ACTIONS.CLEAR_FEEDBACK_FORM});
-            this.props.history.push('/complete');
-        })
-        .catch(err => {
-            console.log(err);
-            alert('Error posting feedback');
-        })
+            .then(() => {
+                //obviosuly this code is clunky -- hopefully learning redux sagas will help :)
+                this.props.dispatch({ type: STAGE_ACTIONS.RESTART_STAGE });
+                this.props.dispatch({ type: FORM_ACTIONS.CLEAR_FEEDBACK_FORM });
+                this.props.history.push('/complete');
+            })
+            .catch(err => {
+                console.log(err);
+                alert('Error posting feedback');
+            })
     }
 
 
-    render(){
-        return(
-            <div>
-                <p>Any comments you want to leave?</p>
-                <input type="text" onChange={this.handleCommentChange} />
-                <button onClick={this.submitFeedback}>Submit</button>
-            </div>
+    render() {
+        return (
+            <Card className="feedback-card">
+                <CardContent>
+                    <h3 clasName="form-header">Any comments you want to leave?</h3>
+                    <TextField
+                        id="standard-uncontrolled"
+                        label="Comments"
+                        margin="normal"
+                        multiline
+                        className="form-select"
+                        value={this.state.comment}
+                        onChange={this.handleCommentChange}
+                    />
+                    <br></br>
+                    <Button type="submit" onClick={this.submitFeedback} variant="contained" color="primary" size="large">
+                        Submit
+                        <ArrowForward />
+                    </Button>
+                </CardContent>
+            </Card>
         );
     }
 }
 
-const mapStateToProps = ({feedbackForm}) => ({feedbackForm});
+const mapStateToProps = ({ feedbackForm }) => ({ feedbackForm });
 
-export default withRouter(connect(mapStateToProps)(FormViewFour));
+export default withStyles(styles)(withRouter(connect(mapStateToProps)(FormViewFour)));

@@ -5,7 +5,7 @@ import FeedbackForm from '../FeedbackForm/FeedbackForm';
 import FORM_ACTIONS from '../../redux/actions/FORM_ACTIONS';
 import STAGE_ACTIONS from '../../redux/actions/STAGE_ACTIONS';
 
-class FormViewOne extends Component {
+class FormViewTwo extends Component {
 
     render(){
         return(
@@ -18,4 +18,4 @@ class FormViewOne extends Component {
     }
 }
 
-export default FormViewOne;
+export default FormViewTwo;

@@ -20,7 +20,7 @@ const styles = theme => ({
     },
     menuItem: {
         color: 'white',
-        backgroundColor: 'blue'
+        backgroundColor: '#033076'
     }
 });
 
@@ -63,9 +63,8 @@ class FeedbackForm extends Component {
                         <MenuItem className={this.props.classes.menuItem} value={3}>Three</MenuItem>
                         <MenuItem className={this.props.classes.menuItem} value={4}>Four</MenuItem>
                         <MenuItem className={this.props.classes.menuItem} value={5}>Five</MenuItem>
-
                     </Select>
-                    <Button type="submit" className={this.props.button} variant="contained" color="primary" size="large">
+                    <Button type="submit" variant="contained" color="primary" size="large">
                         Next
                         <ArrowForward className={this.props.classes.rightIcon} />
                     </Button>

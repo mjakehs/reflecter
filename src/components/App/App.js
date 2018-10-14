@@ -15,11 +15,13 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Header />
-          <Route path="/admin" component={Admin} />
-          <Route exact path="/" render={() => <Redirect to="/feedback" />} />
-          <Route path="/feedback" component={FeedBackFormPage} />
-          <Route path="/complete" component={SubmitCompletePage} />
+  
+            <Header />
+            <Route path="/admin" component={Admin} />
+            <Route exact path="/" render={() => <Redirect to="/feedback" />} />
+            <Route path="/feedback" component={FeedBackFormPage} />
+            <Route path="/complete" component={SubmitCompletePage} />
+
         </div>
       </Router>
     );
