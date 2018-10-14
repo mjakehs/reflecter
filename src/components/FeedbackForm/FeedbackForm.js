@@ -18,6 +18,10 @@ const styles = theme => ({
     rightIcon: {
         marginLeft: theme.spacing.unit,
     },
+    menuItem: {
+        color: 'white',
+        backgroundColor: 'blue'
+    }
 });
 
 class FeedbackForm extends Component {
@@ -41,11 +45,12 @@ class FeedbackForm extends Component {
 
     render() {
         return (
-            <form autoComplete="off">
+            <form autoComplete="off" onSubmit={this.handleNextAction}>
             <h3 className="form-header">{this.props.prompt}</h3>
                 <FormControl>
                     <InputLabel htmlFor="reflectorSelector">{this.props.label}</InputLabel>
                     <Select
+                        className="form-select"
                         value={this.state.inputValue}
                         onChange={this.handleInputChange}
                         inputProps={{
@@ -53,14 +58,14 @@ class FeedbackForm extends Component {
                             id: 'reflectorSelector',
                         }}
                     >
-                        <MenuItem value={1}>One</MenuItem>
-                        <MenuItem value={2}>Two</MenuItem>
-                        <MenuItem value={3}>Three</MenuItem>
-                        <MenuItem value={4}>Four</MenuItem>
-                        <MenuItem value={5}>Five</MenuItem>
+                        <MenuItem className={this.props.classes.menuItem} value={1}>One</MenuItem>
+                        <MenuItem className={this.props.classes.menuItem} value={2}>Two</MenuItem>
+                        <MenuItem className={this.props.classes.menuItem} value={3}>Three</MenuItem>
+                        <MenuItem className={this.props.classes.menuItem} value={4}>Four</MenuItem>
+                        <MenuItem className={this.props.classes.menuItem} value={5}>Five</MenuItem>
 
                     </Select>
-                    <Button className={this.props.button} variant="contained" color="primary" size="large" onClick={this.handleNextAction}>
+                    <Button type="submit" className={this.props.button} variant="contained" color="primary" size="large">
                         Next
                         <ArrowForward className={this.props.classes.rightIcon} />
                     </Button>
