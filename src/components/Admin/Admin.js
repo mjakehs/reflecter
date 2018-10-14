@@ -4,6 +4,35 @@ import {connect} from 'react-redux';
 import ADMIN_ACTIONS from '../../redux/actions/ADMIN_ACTIONS';
 import FeedbackItem from '../FeedbackItem/FeedBackItem';
 import axios from 'axios';
+import { withStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
+const CustomTableCell = withStyles(theme => ({
+    head: {
+      backgroundColor: theme.palette.common.black,
+      color: theme.palette.common.white,
+    },
+    body: {
+      fontSize: 14,
+    },
+  }))(TableCell);
+  
+  const styles = theme => ({
+    root: {
+      width: '100%',
+      marginTop: theme.spacing.unit * 3,
+      overflowX: 'auto',
+    },
+    row: {
+      '&:nth-of-type(odd)': {
+        backgroundColor: theme.palette.background.default,
+      },
+    },
+  });
 
 class Admin extends Component {
 
@@ -25,22 +54,23 @@ class Admin extends Component {
     render(){
         return(
             <div className="admin">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Feeling</th>
-                            <th>Comprehension</th>
-                            <th>Support</th>
-                            <th>Comments</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+                <Table id="admin-table">
+                    <TableHead>
+                        <TableRow>
+                            <CustomTableCell>Flagged</CustomTableCell>
+                            <CustomTableCell>Feeling</CustomTableCell>
+                            <CustomTableCell>Comprehension</CustomTableCell>
+                            <CustomTableCell>Support</CustomTableCell>
+                            <CustomTableCell>Comments</CustomTableCell>
+                            <CustomTableCell>Delete</CustomTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
                         {this.props.feedbackHistory.map(feedback => {
                             return <FeedbackItem setFeedback={this.setFeedback} feedback={feedback} />
                         })}
-                    </tbody>
-                </table>
+                    </TableBody>
+                </Table>
             </div>
         );
     }
@@ -48,4 +78,4 @@ class Admin extends Component {
 
 const mapReduxStateToProps = ({ admin }) => ({feedbackHistory: admin})
 
-export default connect(mapReduxStateToProps)(Admin);
+export default withStyles(styles)(connect(mapReduxStateToProps)(Admin));

@@ -4,13 +4,18 @@
 
 .App-header {
   background-color: #033076;
-  min-height: 70px;
-  padding: 20px;
   color: white;
+  width: 80vw;
+  height: 15vh;
+  vertical-align:  center;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .App-intro {
@@ -31,4 +36,80 @@
   background-color: lightskyblue;
   margin: 0px;
   float: left;
+}
+
+.feedback-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+  height: 50vh;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.feedback-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.form-header {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-size: 2em;
+  margin-bottom: 8vh;
+}
+
+.form-select {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  height: 10vh;
+  width: 20vw;  
+  background-color: white;
+  margin-bottom: 6vh;
+}
+
+.next-button {  
+  float: right;
+}
+
+.progress-bar-div {
+  margin-bottom: 10vh;
+}
+
+#admin-table {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+} 
+
+#reset {
+  width: 20vw;
+  height: 6vh;
+  padding-top: 20vh;
+  margin: auto;
+}
+
+.final-feedback-card {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40vw;
+  height: 50vh;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 10vh;
+  background-color: lightcyan;
+}
+
+.Complete-Header {
+  width: 20vw;
+  height: 10vh;
+  background-color: lightblue;
+  border: solid black 1px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-top: 5vh;
+  margin-left: auto;
+  margin-right: auto;
 }
