@@ -1,16 +1,9 @@
 //page view displayed on form completeion -- pushes user back to form start.
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-
-
-const styles = theme => ({
-    button: {
-      margin: theme.spacing.unit,
-    },
-  });
-
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 class SubmitCompletePage extends Component {
 
@@ -18,13 +11,20 @@ class SubmitCompletePage extends Component {
         this.props.history.push('/');
     }
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
-                <Button variant="contained" color="primary"  size="large" className={this.props.classes.button} onClick={this.restartFeedbackProcess}>Return to Give Feedback Form</Button>
+                <header className="Complete-Header">
+                    <h1>Thank You!</h1>
+                </header>
+                <Card class="final-feedback-card">
+                    <CardContent id="reset">
+                        <Button variant="contained" color="primary" size="large" onClick={this.restartFeedbackProcess}>Give Another Feedback</Button>
+                    </CardContent>
+                </Card>
             </div>
         );
     }
 }
 
-export default withStyles(styles)(withRouter(SubmitCompletePage));
+export default withRouter(SubmitCompletePage);
