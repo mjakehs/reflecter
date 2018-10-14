@@ -17,7 +17,7 @@ class App extends Component {
         <div className="App">
           <Header />
           <Route path="/admin" component={Admin} />
-          <Route exact path="/" render={() => <Redirect to="/feedback"/>} />
+          <Route exact path="/" render={() => <Redirect to="/feedback" />} />
           <Route path="/feedback" component={FeedBackFormPage} />
           <Route path="/complete" component={SubmitCompletePage} />
         </div>

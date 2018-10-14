@@ -2,7 +2,7 @@ const router = require('express').Router();
 const pool = require('../modules/pool');
 
 router.get('/', (req, res) => {
-    pool.query(`SELECT * FROM "feedback";`)
+    pool.query(`SELECT * FROM "feedback" ORDER BY "id";`)
     .then(results => {
         res.send(results.rows);
     })
@@ -27,6 +27,19 @@ router.post('/', (req, res) => {
 router.delete('/', (req, res) => {
     pool.query(`DELETE FROM "feedback"
     WHERE "id"=$1;`, [req.query.id])
+    .then(() => {
+        res.sendStatus(200);
+    })
+    .catch(err => {
+        console.log('Error in /api/feedback delete', err);
+        res.sendStatus(500);
+    })
+});
+
+router.put('/', (req, res) => {
+    pool.query(`UPDATE "feedback"
+    SET "flagged"=$1
+    WHERE "id"=$2;`, [req.body.flagged, req.query.id])
     .then(() => {
         res.sendStatus(200);
     })
