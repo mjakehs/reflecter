@@ -51,7 +51,6 @@ class FormViewFour extends Component {
                 this.props.history.push('/complete');
             })
             .catch(err => {
-                console.log(err);
                 alert('Error posting feedback');
             })
     }//submits feedback to server -> SQL db

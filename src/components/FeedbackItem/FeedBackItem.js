@@ -48,11 +48,9 @@ class FeedBackItem extends Component {
             }
         })
         .then(results => {
-            console.log(results);
             this.props.setFeedback();
         })
         .catch(err => {
-            console.log(err);
             alert('Error flagging feedback.');
         })
     }//allow for feedback items to be flagged by toggling checkbox on table

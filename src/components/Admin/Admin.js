@@ -59,7 +59,6 @@ class Admin extends Component {
     };//opens confirm dialog (as props to FeedbackItem)
 
     handleClose = event => {
-        console.log(event.target.innerHTML);
         this.setState({
             ...this.state,
              open: false });
@@ -71,13 +70,13 @@ class Admin extends Component {
                     id: this.state.toDeleteId,
                 }
             })
-                .then(() => {
+            .then(() => {
                     this.setFeedback();
-                })
-                .catch(err => {
+            })
+            .catch(err => {
                     console.log(err);
                     alert('Error deleting feedback from database.');
-                })
+             })
         }
     };//closes dialog and deletes if confirmed
 
