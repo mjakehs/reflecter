@@ -36,23 +36,6 @@ const styles = theme => ({
 
 class FeedBackItem extends Component {
 
-    deleteFeedback = id => {
-        axios({
-            method: 'DELETE',
-            url: '/api/feedback',
-            params: {
-                id: id,
-            }
-        })
-            .then(() => {
-                this.props.setFeedback();
-            })
-            .catch(err => {
-                console.log(err);
-                alert('Error deleting feedback from database.');
-            })
-    }
-
     flagFeedback = () => {   
         axios({
             method: 'PUT',
@@ -85,7 +68,7 @@ class FeedBackItem extends Component {
                 <CustomTableCell>{this.props.feedback.understanding}</CustomTableCell>
                 <CustomTableCell>{this.props.feedback.support}</CustomTableCell>
                 <CustomTableCell>{this.props.feedback.comments}</CustomTableCell>
-                <CustomTableCell><Button variant="contained" size="small" onClick={() => this.deleteFeedback(this.props.feedback.id)}>Delete</Button></CustomTableCell>
+                <CustomTableCell><Button variant="contained" size="small" onClick={() => this.props.handleOpen(this.props.feedback.id)}>Delete</Button></CustomTableCell>
             </TableRow>
         );
     }
