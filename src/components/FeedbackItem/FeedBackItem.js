@@ -1,6 +1,8 @@
 //used as return for map function in Admin component
 import React, { Component } from 'react';
 import axios from 'axios';
+
+//styles for table row
 import { withStyles } from '@material-ui/core/styles';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
@@ -53,7 +55,7 @@ class FeedBackItem extends Component {
             console.log(err);
             alert('Error flagging feedback.');
         })
-    }
+    }//allow for feedback items to be flagged by toggling checkbox on table
 
     render() {
         return (

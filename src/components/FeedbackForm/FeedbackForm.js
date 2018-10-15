@@ -2,6 +2,8 @@
 //takes question as props
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+
+//form Styling
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 import InputLabel from '@material-ui/core/InputLabel';
@@ -36,12 +38,12 @@ class FeedbackForm extends Component {
         this.setState({
             inputValue: newInput,
         })
-    }
+    }//sets redux state as input changes
 
     handleNextAction = () => {
         this.props.history.push(this.props.path);
         this.props.dispatch({type: this.props.stageAction})
-    }
+    }//moves the app along to next stage (for serial form views)
 
     render() {
         return (

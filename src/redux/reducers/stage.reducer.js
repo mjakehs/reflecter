@@ -10,6 +10,6 @@ const stage = (state = 1, action) => {
             return state;
     
     }
-}
+}//handles the stage of the form completion to project to progress bar
 
 export default stage;

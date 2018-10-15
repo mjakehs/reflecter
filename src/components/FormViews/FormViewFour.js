@@ -2,15 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { withRouter } from 'react-router-dom';
+
+//style includes
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import TextField from '@material-ui/core/TextField';
 import { withStyles } from '@material-ui/core/styles';
+
 //action includes
 import FORM_ACTIONS from '../../redux/actions/FORM_ACTIONS';
 import STAGE_ACTIONS from '../../redux/actions/STAGE_ACTIONS';
+
+/* ONLY UNIQUE FORM VIEW */
 
 const styles = theme => ({
     textField: {
@@ -31,7 +36,7 @@ class FormViewFour extends Component {
         this.setState({
             comment: event.target.value,
         })
-    }
+    }//changes comment value in redux state
 
     submitFeedback = () => {
         axios({
@@ -49,7 +54,7 @@ class FormViewFour extends Component {
                 console.log(err);
                 alert('Error posting feedback');
             })
-    }
+    }//submits feedback to server -> SQL db
 
 
     render() {

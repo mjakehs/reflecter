@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
+import FeedbackForm from '../FeedbackForm/FeedbackForm';
+
+//styles
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-import FeedbackForm from '../FeedbackForm/FeedbackForm';
+
+//action includes
 import FORM_ACTIONS from '../../redux/actions/FORM_ACTIONS';
 import STAGE_ACTIONS from '../../redux/actions/STAGE_ACTIONS';
 

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const progressFillerFunction = () => {
     return <div className="progress-filler"></div>
-}
+}//returns little block to fill progress bar
 
 class ProgressBar extends Component {
 
@@ -21,7 +21,7 @@ class ProgressBar extends Component {
                 ]
             })
         }
-    }
+    }//fills progress bar based on redux state 'stage' value
 
     componentWillReceiveProps() {
         this.ProgressFiller();

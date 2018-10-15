@@ -6,7 +6,7 @@ class Header extends Component {
         if (performance.navigation.type === 1) {
             this.props.history.push('/feedback');
         }
-    }
+    }//redirect user to start of form on page reset
 
     render() {
         return (

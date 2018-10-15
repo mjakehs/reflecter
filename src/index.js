@@ -9,8 +9,8 @@ import './index.css';
 import App from './components/App/App';
 
 //redux dependencies
-import {applyMiddleware, createStore, combineReducers} from 'redux';
-import logger from 'redux-logger';
+import { /*applyMiddleware,*/ createStore, combineReducers} from 'redux';
+// import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 
 //reducer includes
@@ -27,7 +27,7 @@ const reducers = combineReducers({
 
 const storeInstance = createStore(
     reducers,
-    applyMiddleware(logger),
+    // applyMiddleware(logger), remove logger after dev complete
 );
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));

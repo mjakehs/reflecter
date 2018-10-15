@@ -1,6 +1,8 @@
 //page view displayed on form completeion -- pushes user back to form start.
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
+//style includes
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,7 +11,7 @@ class SubmitCompletePage extends Component {
 
     restartFeedbackProcess = () => {
         this.props.history.push('/');
-    }
+    }//routes user back to initial feedback form on click
 
     render() {
         return (

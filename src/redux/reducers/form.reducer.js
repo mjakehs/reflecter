@@ -15,6 +15,6 @@ const feedbackForm  = (state = {feeling: '', comprehension: '', supported:'', co
         default:
             return state;
     }
-}
+}//actions to set value of each form field and clear all values
 
 export default feedbackForm;

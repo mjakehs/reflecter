@@ -4,12 +4,16 @@ import { connect } from 'react-redux';
 import ADMIN_ACTIONS from '../../redux/actions/ADMIN_ACTIONS';
 import FeedbackItem from '../FeedbackItem/FeedBackItem';
 import axios from 'axios';
+
+//styles for table
 import { withStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
+
+//styles for confirm dialog
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -47,33 +51,35 @@ class Admin extends Component {
     };
 
     handleClickOpen = id => {
-        console.log(id);
         this.setState({ 
             ...this.state,
             open: true,
             toDeleteId: id, 
         });
-    };
+    };//opens confirm dialog (as props to FeedbackItem)
 
-    handleClose = () => {
+    handleClose = event => {
+        console.log(event.target.innerHTML);
         this.setState({
             ...this.state,
              open: false });
-        axios({
-            method: 'DELETE',
-            url: '/api/feedback',
-            params: {
-                id: this.state.toDeleteId,
-            }
-        })
-            .then(() => {
-                this.setFeedback();
+        if (event.target.innerHTML === 'Confirm'){
+            axios({
+                method: 'DELETE',
+                url: '/api/feedback',
+                params: {
+                    id: this.state.toDeleteId,
+                }
             })
-            .catch(err => {
-                console.log(err);
-                alert('Error deleting feedback from database.');
-            })
-    };
+                .then(() => {
+                    this.setFeedback();
+                })
+                .catch(err => {
+                    console.log(err);
+                    alert('Error deleting feedback from database.');
+                })
+        }
+    };//closes dialog and deletes if confirmed
 
     setFeedback = () => {
         axios.get('/api/feedback')
@@ -84,7 +90,7 @@ class Admin extends Component {
                 console.log(err);
                 alert('Error getting feedback from database.');
             })
-    }
+    }//get feedback + save to store
 
     componentDidMount() {
         this.setFeedback();
